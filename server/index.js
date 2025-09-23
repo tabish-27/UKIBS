@@ -19,43 +19,43 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middlewares
+// -------------------- MIDDLEWARES --------------------
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
-// API Routes
+// -------------------- API ROUTES --------------------
 app.use("/api/enquiry", enquiryRoutes);
 app.use("/api/whatsapp", whatsappRoutes);
 
-// Test route
-app.get("/*", (req, res) => {
-  res.send("Hi, Welcome to the server!");
+// Optional: Test route for backend only
+app.get("/api/test-server", (req, res) => {
+  res.send("✅ Backend server is running!");
 });
 
 // DB test route
 app.get("/api/test-db", (req, res) => {
-  const status = mongoose.connection.readyState; 
-  // 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
+  const status = mongoose.connection.readyState; // 0=disconnected,1=connected
   res.json({ connected: status === 1, status });
 });
 
-// Serve React build (production)
+// -------------------- REACT FRONTEND SERVE --------------------
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, "../client/build")));
+// Make sure this points to your Vite build folder (dist)
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+app.get("/*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/dist", "index.html"));
 });
 
-// Connect to MongoDB Atlas and start server
+// -------------------- CONNECT TO DB & START SERVER --------------------
 connectDB()
   .then(() => {
     console.log("✅ Database connection attempt completed");
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`🚀 Server running on port ${PORT}`);
     });
   })
   .catch((error) => {
