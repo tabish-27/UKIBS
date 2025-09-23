@@ -7,7 +7,7 @@ const TwoWayctaBrochure = () => {
   return (
     <section className="w-full bg-gradient-to-r from-pink-600 to-pink-400 py-12 text-white text-center">
       <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-        Get Your Free Course Brochure
+        Get Your Free Brochure
       </h2>
       <p className="mb-6 text-lg md:text-xl">
         Download the detailed brochure and kickstart your career journey with UK INTERNATIONAL London Beauty School!

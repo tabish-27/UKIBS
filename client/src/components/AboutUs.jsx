@@ -98,7 +98,7 @@ const AboutUs = () => {
           {/* Left: Text */}
           <div className="flex-1 flex flex-col pr-0 md:pr-8 lg:pr-12">
             <div className="flex justify-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 drop-shadow-lg relative inline-block uppercase text-center">
+              <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 drop-shadow-lg relative inline-block uppercase text-center">
                 <span className="text-[#F8069D]">ABOUT</span>{" "}
                 <span className="text-black">US</span>
                 <span className="absolute left-0 bottom-[-3px] sm:bottom-[-4px] h-[2px] w-full bg-gradient-to-r from-transparent via-[#F8069D] to-transparent rounded-full"></span>
