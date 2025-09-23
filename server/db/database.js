@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 let isConnected = false;
 
-const connectDB = async () => {
+const database = async () => {
   try {
     if (!process.env.MONGO_URI) {
       throw new Error("MONGO_URI not set in environment variables");
@@ -41,4 +41,4 @@ const connectDB = async () => {
 };
 
 export const getConnectionStatus = () => isConnected;
-export default connectDB;
+export default database;
