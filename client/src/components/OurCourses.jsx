@@ -48,7 +48,7 @@ const courses = [
     subtitle: "International Certification",
     duration: "(Duration 6 Months)",
     description:
-      "Great hairstyles create confidence and style. At UK International Beauty School, our 3-month international hairstyling course covers Cutting, Styling, Coloring, Barbering, and Advanced Techniques. Expert trainers guide you with real salon knowledge, helping you master trends. Students join to gain practical cutting skills and build creative hairstyling careers.",
+      "Great hairstyles create confidence and style. At UK International Beauty School, our 6-month international hairstyling course covers Cutting, Styling, Coloring, Barbering, and Advanced Techniques. Expert trainers guide you with real salon knowledge, helping you master trends. Students join to gain practical cutting skills and build creative hairstyling careers.",
     modules: [
       "Fundamentals of Hairdressing",
       "Advanced Haircutting Techniques",
