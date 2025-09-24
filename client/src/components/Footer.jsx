@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaPinterestP,
-  FaYoutube,
-} from "react-icons/fa";
 
 const locations = [
   {
@@ -141,7 +135,7 @@ const Footer = () => {
                         href="tel:+91-8181814007"
                         className="hover:text-[#F8069D] transition-colors duration-200 text-lg md:text-base"
                       >
-                        +91-8181814007
+                        For Admission: +91-8181814007
                       </a>
                     </p>
                     <p className="flex items-start w-1/2">
@@ -157,7 +151,7 @@ const Footer = () => {
                         href="tel:+91-8181819449"
                         className="hover:text-[#F8069D] transition-colors duration-200 text-lg md:text-base"
                       >
-                        +91-8181819449
+                        For Enquiry: +91-8181819449
                       </a>
                     </p>
                   </div>
@@ -176,6 +170,23 @@ const Footer = () => {
                       className="hover:text-[#F8069D] transition-colors duration-200 text-sm md:text-base"
                     >
                       info@uk-international.com
+                    </a>
+                  </p>
+                  <p className="flex items-start justify-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 mr-2 text-[#F8069D] flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <a
+                      href="mailto:info@ukbeautyschool.com"
+                      className="hover:text-[#F8069D] transition-colors duration-200 text-sm md:text-base"
+                    >
+                      info@ukbeautyschool.com
                     </a>
                   </p>
                 </div>
@@ -219,7 +230,7 @@ const Footer = () => {
                       href="tel:+91-8181814007"
                       className="hover:text-[#F8069D] transition-colors duration-200 text-lg md:text-xl"
                     >
-                      +91-8181814007
+                      For Admission: +91-8181814007
                     </a>
                   </p>
                   <p className="flex items-start w-1/3 justify-center">
@@ -235,7 +246,7 @@ const Footer = () => {
                       href="tel:+91-8181819449"
                       className="hover:text-[#F8069D] transition-colors duration-200 text-lg md:text-xl"
                     >
-                      +91-8181819449
+                      For Enquiry: +91-8181819449
                     </a>
                   </p>
                   <p className="flex items-start w-1/3 justify-start">
@@ -253,6 +264,23 @@ const Footer = () => {
                       className="hover:text-[#F8069D] transition-colors duration-200 text-sm md:text-base"
                     >
                       info@uk-international.com
+                    </a>
+                  </p>
+                  <p className="flex items-start w-1/3 justify-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 mr-2 text-[#F8069D] flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <a
+                      href="mailto:info@ukbeautyschool.com"
+                      className="hover:text-[#F8069D] transition-colors duration-200 text-sm md:text-base"
+                    >
+                      info@ukbeautyschool.com
                     </a>
                   </p>
                 </div>
@@ -451,7 +479,7 @@ const Footer = () => {
       <div className="bg-black text-white py-16">
         <div className="container mx-auto px-4 lg:px-12">
           <div className="flex flex-col lg:flex-row justify-between gap-16">
-            <div className="mb-12 ml-0 lg:ml-28 lg:mb-0 lg:w-1/2 flex justify-start">
+            <div className="mb-12 ml-0 lg:ml-12 lg:mb-0 lg:w-1/2 flex justify-start">
               <div>
                 <h3 className="text-3xl font-extrabold mb-8 text-[#F8069D]">
                   Useful Links
@@ -463,7 +491,9 @@ const Footer = () => {
                       { label: "About Us", href: "/about-us" },
                       { label: "Courses", href: "/courses" },
                       { label: "Placements", href: "/placements" },
-                      { label: "Contact Us", href: "/contact-us" },
+                      { label: "Accreditation", href: "/accreditation" },
+                      { label: "Awards", href: "/awards" },
+                      { label: "Partners", href: "/Partners" },
                     ].map((link) => (
                       <li key={link.label}>
                         <Link
@@ -490,6 +520,49 @@ const Footer = () => {
                         className="border-b-2 border-transparent hover:border-[#F8069D] pb-1 transition-colors duration-200 text-left"
                       >
                         Terms & Conditions
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/Disclaimer"
+                        className="border-b-2 border-transparent hover:border-[#F8069D] pb-1 transition-colors duration-200 text-left"
+                      >
+                        Disclaimer
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/contact-us"
+                        className="border-b-2 border-transparent hover:border-[#F8069D] pb-1 transition-colors duration-200 text-left"
+                      >
+                        Contact Us
+                      </Link>
+                    </li>
+                    <li>
+                      <a
+                        href="https://youtu.be/V0ePd6-Ry8Y?feature=shared"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border-b-2 border-transparent hover:border-[#F8069D] pb-1 transition-colors duration-200 text-left"
+                      >
+                        Campus Tour
+                      </a>
+                    </li>
+
+                    <li>
+                      <Link
+                        to="/FAQ"
+                        className="border-b-2 border-transparent hover:border-[#F8069D] pb-1 transition-colors duration-200"
+                      >
+                        FAQ
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/Gallery"
+                        className="border-b-2 border-transparent hover:border-[#F8069D] pb-1 transition-colors duration-200"
+                      >
+                        Gallery
                       </Link>
                     </li>
                   </ul>
@@ -534,6 +607,27 @@ const Footer = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <a
+                      href="mailto:info@ukbeautyschool.com"
+                      className="hover:text-[#F8069D] transition-colors duration-200"
+                    >
+                      info@ukbeautyschool.com
+                    </a>
+                  </p>
+                  <p className="flex items-center hover:text-[#F8069D] transition-colors duration-200">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 mr-4 text-[#F8069D] flex-shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <circle cx="12" cy="12" r="10" />
                       <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
                       <line x1="2.1" y1="12" x2="21.9" y2="12" />
@@ -564,7 +658,7 @@ const Footer = () => {
                       href="tel:+918181819449"
                       className="hover:text-[#F8069D] transition-colors duration-200"
                     >
-                      +91 8181819449
+                      For Enquiry: +91 8181819449
                     </a>
                   </p>
                   <p className="flex items-center hover:text-[#F8069D] transition-colors duration-200">
@@ -584,7 +678,7 @@ const Footer = () => {
                       href="tel:+918181814007"
                       className="hover:text-[#F8069D] transition-colors duration-200"
                     >
-                      +91 8181814007
+                      For Admission: +91 8181814007
                     </a>
                   </p>
                   <p className="flex items-start hover:text-[#F8069D] transition-colors duration-200">
@@ -631,7 +725,11 @@ const Footer = () => {
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-black-100 text-black-800 shadow-md 
                  hover:bg-[#F8069D] hover:text-white transition-all duration-300 transform hover:scale-110"
               >
-                <FaInstagram size={22} />
+                <img
+                  src="public/assets/social_media_logo/Instagram.png"
+                  alt="Instagram"
+                  className="h-10 w-10"
+                />
               </a>
               <a
                 href="https://www.facebook.com/ukInternationallondonbeautyschool"
@@ -641,7 +739,11 @@ const Footer = () => {
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-black-100 text-black-800 shadow-md 
                  hover:bg-[#F8069D] hover:text-white transition-all duration-300 transform hover:scale-110"
               >
-                <FaFacebookF size={22} />
+                <img
+                  src="public/assets/social_media_logo/Facebook.png"
+                  alt="Facebook"
+                  className="h-10 w-10"
+                />
               </a>
               <a
                 href="https://in.pinterest.com/uklondonbeautyschool/"
@@ -651,7 +753,11 @@ const Footer = () => {
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-black-100 text-black-800 shadow-md 
                  hover:bg-[#F8069D] hover:text-white transition-all duration-300 transform hover:scale-110"
               >
-                <FaPinterestP size={22} />
+                <img
+                  src="public/assets/social_media_logo/Pinterest.png"
+                  alt="Pinterest"
+                  className="h-10 w-10"
+                />
               </a>
               <a
                 href="https://www.youtube.com/channel/UCBr6U1jwAR0KfIaZlhC1PiQ"
@@ -661,7 +767,11 @@ const Footer = () => {
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-black-100 text-black-800 shadow-md 
                  hover:bg-[#F8069D] hover:text-white transition-all duration-300 transform hover:scale-110"
               >
-                <FaYoutube size={22} />
+                <img
+                  src="public/assets/social_media_logo/Youtube.png"
+                  alt="YouTube"
+                  className="h-10 w-10"
+                />
               </a>
               <a
                 href="https://x.com/uk_beautyschool"
@@ -671,14 +781,11 @@ const Footer = () => {
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-black-100 text-black-800 shadow-md 
                  hover:bg-[#F8069D] hover:text-white transition-all duration-300 transform hover:scale-110"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  viewBox="0 0 448 512"
-                  fill="currentColor"
-                >
-                  <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 220.8 289.1 380H175.9L210 208.4 104 116.9l56-0 81.1 76.6L313.1 116z" />
-                </svg>
+                <img
+                  src="public/assets/social_media_logo/X.png"
+                  alt="Twitter"
+                  className="h-10 w-10"
+                />
               </a>
             </div>
           </div>

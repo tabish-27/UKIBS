@@ -7,19 +7,17 @@ const Testimonial = () => {
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <header className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-black mb-6 sm:mb-8 tracking-wide relative inline-block text-center leading-snug">
-  {/* Mobile: do alag lines */}
-  {/* <span className="block sm:hidden">FROM CLASSROOM</span> */}
-  <span className="block sm:hidden text-[#F8069D]">SPOTLIGHT</span>
+            {/* Mobile: do alag lines */}
+            {/* <span className="block sm:hidden">FROM CLASSROOM</span> */}
+            <span className="block sm:hidden text-[#F8069D]">SPOTLIGHT</span>
 
-  {/* Desktop: ek hi line */}
-  <span className="hidden sm:inline">
-    <span className="text-[#F8069D]">SPOTLIGHT</span>
-  </span>
+            {/* Desktop: ek hi line */}
+            <span className="hidden sm:inline">
+              <span className="text-[#F8069D]">SPOTLIGHT</span>
+            </span>
 
-  <span className="absolute left-0 bottom-[-4px] h-1 w-full bg-gradient-to-r from-transparent via-[#F8069D] to-transparent rounded-full"></span>
-</h2>
-
-
+            <span className="absolute left-0 bottom-[-4px] h-1 w-full bg-gradient-to-r from-transparent via-[#F8069D] to-transparent rounded-full"></span>
+          </h2>
         </header>
 
         {/* Main Testimonials Grid */}
@@ -38,10 +36,12 @@ const Testimonial = () => {
             </div>
             <div className="text-center">
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#F8069D] mb-1 sm:mb-2">
-                UK International Students Rock the Ramp at Black Pearl Fashion Week
+                UK International Students Rock the Ramp at Black Pearl Fashion
+                Week
               </h2>
               <p className="text-xs sm:text-sm text-black">
-                Watch our students showcase their skills at Black Pearl Fashion Week.
+                Watch our students showcase their skills at Black Pearl Fashion
+                Week.
               </p>
             </div>
           </div>
@@ -63,7 +63,8 @@ const Testimonial = () => {
                 Discover Asia’s No. 1 Beauty Academy
               </h2>
               <p className="text-xs sm:text-sm text-black">
-                Learn why UK International is Asia's top beauty academy and about our award-winning courses.
+                Learn why UK International is Asia's top beauty academy and
+                about our award-winning courses.
               </p>
             </div>
           </div>
@@ -85,7 +86,8 @@ const Testimonial = () => {
                 UK International | INDIA'S NO 1 BEAUTY & MAKEUP ACADEMY
               </h2>
               <p className="text-xs sm:text-sm text-black">
-                A video showcasing why we are India's number one beauty and makeup academy.
+                A video showcasing why we are India's number one beauty and
+                makeup academy.
               </p>
             </div>
           </div>
@@ -107,7 +109,8 @@ const Testimonial = () => {
                 Best Makeup Academy in Delhi NCR | Student Review
               </h2>
               <p className="text-xs sm:text-sm text-black">
-                A certified makeup artist course student shares their experience and feedback.
+                A certified makeup artist course student shares their experience
+                and feedback.
               </p>
             </div>
           </div>

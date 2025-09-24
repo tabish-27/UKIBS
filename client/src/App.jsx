@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 // Import Components
 import Layout from "./components/Layout";
@@ -16,10 +21,15 @@ import ContactPage from "./pages/ContactPage";
 import AboutUs from "./components/AboutUs";
 import Awards from "./components/Awards";
 import Placements from "./components/Placements";
-import ThankuPage from "./pages/ThankuPage"; 
+import Gallery from "./components/Gallery";
+import ThankuPage from "./pages/ThankuPage";
 import AdminPanel from "./pages/AdminPanel";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import Disclaimer from "./pages/Disclaimer";
+import FAQ from "./components/FAQ";
+import Accreditation from "./components/Accreditation";
+import Partners from "./components/Partners";
 
 // 👇 ScrollToTop
 const ScrollToTop = () => {
@@ -54,7 +64,15 @@ const App = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/thanku" element={<ThankuPage />} />
                 <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-                <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+                <Route
+                  path="/TermsAndConditions"
+                  element={<TermsAndConditions />}
+                />
+                <Route path="/Disclaimer" element={<Disclaimer />} />
+                <Route path="/Gallery" element={<Gallery />} />
+                <Route path="/FAQ" element={<FAQ />} />
+                <Route path="/Accreditation" element={<Accreditation />} />
+                <Route path="/Partners" element={<Partners/>} />
               </Routes>
 
               {/* 👈 Live Chat har normal page par */}
@@ -66,7 +84,11 @@ const App = () => {
         {/* ✅ Admin page (special layout with only Navbar) */}
         <Route
           path="/adminpanel"
-          element={<Layout adminOnly={true}><AdminPanel /></Layout>}
+          element={
+            <Layout adminOnly={true}>
+              <AdminPanel />
+            </Layout>
+          }
         />
       </Routes>
     </Router>

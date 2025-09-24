@@ -7,6 +7,9 @@ import Testimonial from "../components/Testimonial";
 import Banner from "../components/Banner";
 import WhyChooseUs from "../components/WhyChooseUs";
 import TwoWayctaBrochure from "../components/TwoWayctaBrochure";
+import Gallery from "../components/Gallery";
+import Accreditation from "../components/Accreditation";
+
 
 const Home = () => {
   const location = useLocation();
@@ -31,6 +34,8 @@ const Home = () => {
       <TwoWayctaBrochure/>
       <WhyChooseUs enquiryRef={enquiryRef} />
       <Testimonial />
+      <Gallery />
+      <Accreditation/>
     </div>
   );
 };

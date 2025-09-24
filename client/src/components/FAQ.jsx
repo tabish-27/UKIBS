@@ -29,6 +29,36 @@ const faqData = [
     answer:
       "Students can apply online through our website or visit centers in Delhi, Noida, and other branches. UK International Beauty Academy provides complete guidance on course details, fees, schedules, and helps choose the right program for your career.",
   },
+  {
+    question: "Q6.Who is the owner of the UK International London Beauty School?",
+    answer:
+      "Mr. Abdul is the founder of the UK International London Beauty School and Dr. Uzma Khan is the co-founder and CEO.",
+  },
+  {
+    question: "Q7. What Courses are offered at UK International London Beauty School?",
+    answer:
+      "UK International London Beauty School offers a wide range of beauty courses such as basic to advanced makeup, hair dressing, hair styling, nail, hair extension, CIDESCO, beauty, aesthetic, SPMU and also provides B.Voc degree with international certification.",
+  },
+  {
+    question: "Q8. Do you provide International Certification?",
+    answer:
+      "Yes! The UK international beauty school is a trusted beauty academy who provides international certification for every beauty course which is recognized not even in India but globally.",
+  },
+  {
+    question: "Q9. Where is the UK International Beauty School located?",
+    answer:
+      "The UK International London Beauty School has multiple branches such as at Noida (Head office), Patna, Ghaziabad, Lajpat Nagar, Rajouri Garden and Bangalore with the vision to be accessible to students who are passionate and build their career in the beauty & fashion industry.",
+  },
+  {
+    question: "Q10. What is the duration of the courses?",
+    answer:
+      "Different courses have their own duration as per the course level and practice sessions. For example - international beauty master course & makeup course is for 3 months, hair mastery is for 6 months, cosmetology for 1 year and B.Voc is a bachelor degree which completes in 3 years. There are many other courses as well which duration is just one or two months like nail art.",
+  },
+  {
+    question: "Q11. How can I apply for admission?",
+    answer:
+      "For enrolling in any course at UK International London Beauty School you can visit our academy, call us directly or fill out our enquiry form online and get a call from our expert soon.",
+  },
 ];
 
 const FAQ = () => {

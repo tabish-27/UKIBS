@@ -7,31 +7,59 @@ const EnquiryForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
     const formData = new FormData(event.target);
 
-    // Add source information to form data
-    formData.append("source", "bottom_form");
-    formData.append("access_key", "bc21e588-24a3-478c-a759-559b51cafaf9");
+    const name = formData.get("name").trim();
+    const phone = formData.get("phone").trim();
+    const city = formData.get("city").trim();
+    const course = formData.get("course").trim();
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
+    // Validation checks
+    if (!name || !phone || (!city && !course)) {
+      setResult("Please fill Name, Phone, and either City or Course");
       setIsMessageBoxVisible(true);
-      
-      setTimeout(() => {
-        setIsMessageBoxVisible(false);
-      }, 2000);
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      return;
+    }
+
+    if (/\d/.test(name)) {
+      setResult("Name cannot contain numbers");
+      setIsMessageBoxVisible(true);
+      return;
+    }
+
+    if (phone.length < 10) {
+      setResult("Phone number must be at least 10 digits");
+      setIsMessageBoxVisible(true);
+      return;
+    }
+
+    // Proceed with submission
+    setResult("Sending....");
+
+    formData.append("source", "bottom_form");
+    formData.append("access_key", "5b8060c2-975a-4246-9b19-6b88ed4b5464");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+        setIsMessageBoxVisible(true);
+        setTimeout(() => setIsMessageBoxVisible(false), 2000);
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+        setIsMessageBoxVisible(true);
+      }
+    } catch (error) {
+      console.log("Fetch Error:", error);
+      setResult("Something went wrong. Try again!");
       setIsMessageBoxVisible(true);
     }
   };
@@ -53,28 +81,68 @@ const EnquiryForm = () => {
         <label className="block mb-1 text-base sm:text-lg font-medium text-black">
           Name
         </label>
-        <input type="text" name="name" placeholder="Full Name" className="w-full mb-2 px-4 py-3 border-2 border-[#F8069D]/50 rounded-lg bg-transparent text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F8069D] transition" required />
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          className="w-full mb-2 px-4 py-3 border-2 border-[#F8069D]/50 rounded-lg bg-transparent text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F8069D] transition"
+          required
+          autoComplete="new-password"
+          spellCheck="false"
+        />
 
         <label className="block mb-1 text-base sm:text-lg font-medium text-black">
           Phone Number
         </label>
-        <input type="tel" name="phone" placeholder="Phone Number" className="w-full mb-2 px-4 py-3 border-2 border-[#F8069D]/50 rounded-lg bg-transparent text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F8069D] transition" required />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          className="w-full mb-2 px-4 py-3 border-2 border-[#F8069D]/50 rounded-lg bg-transparent text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F8069D] transition"
+          required
+          autoComplete="new-password"
+          spellCheck="false"
+        />
 
         <label className="block mb-1 text-base sm:text-lg font-medium text-black">
           Enter City
         </label>
-        <input type="text" name="city" placeholder="Your City" className="w-full mb-2 px-4 py-3 border-2 border-[#F8069D]/50 rounded-lg bg-transparent text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F8069D] transition" />
+        <input
+          type="text"
+          name="city"
+          placeholder="Your City"
+          className="w-full mb-2 px-4 py-3 border-2 border-[#F8069D]/50 rounded-lg bg-transparent text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F8069D] transition"
+          autoComplete="new-password"
+          spellCheck="false"
+        />
 
         <label className="block mb-1 text-base sm:text-lg font-medium text-black">
           Enter Course
         </label>
-        <input type="text" name="course" placeholder="e.g., Cosmetology, Makeup" className="w-full mb-8 px-4 py-3 border-2 border-[#F8069D]/50 rounded-lg bg-transparent text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F8069D] transition" />
+        <input
+          type="text"
+          name="course"
+          placeholder="e.g., Cosmetology, Makeup"
+          className="w-full mb-8 px-4 py-3 border-2 border-[#F8069D]/50 rounded-lg bg-transparent text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F8069D] transition"
+          autoComplete="new-password"
+          spellCheck="false"
+        />
 
-        <CustomButton type="submit" className="w-full py-3 px-6">Submit Enquiry</CustomButton>
+        <CustomButton type="submit" className="w-full py-3 px-6">
+          Submit Enquiry
+        </CustomButton>
 
         {result && !isMessageBoxVisible && (
           <div className="mt-4 p-3 text-center">
-            <p className={`text-sm font-medium ${result.includes("Successfully") ? "text-green-600" : result.includes("Sending") ? "text-blue-600" : "text-red-600"}`}>
+            <p
+              className={`text-sm font-medium ${
+                result.includes("Successfully")
+                  ? "text-green-600"
+                  : result.includes("Sending")
+                  ? "text-blue-600"
+                  : "text-red-600"
+              }`}
+            >
               {result}
             </p>
           </div>
@@ -83,10 +151,18 @@ const EnquiryForm = () => {
         {isMessageBoxVisible && (
           <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-6 z-50">
             <div className="bg-white text-black p-6 sm:p-8 rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-md text-center">
-              <p className={`text-lg sm:text-xl font-semibold ${result.includes("Successfully") ? "text-green-600" : "text-red-600"}`}>
-                {result.includes("Successfully") ? "Thank you! Your enquiry has been submitted." : result}
+              <p
+                className={`text-lg sm:text-xl font-semibold ${
+                  result.includes("Successfully") ? "text-green-600" : "text-red-600"
+                }`}
+              >
+                {result.includes("Successfully")
+                  ? "Thank you! Your enquiry has been submitted."
+                  : result}
               </p>
-              <CustomButton onClick={closeMessageBox} className="mt-6 px-6 sm:px-8 py-3">Close</CustomButton>
+              <CustomButton onClick={closeMessageBox} className="mt-6 px-6 sm:px-8 py-3">
+                Close
+              </CustomButton>
             </div>
           </div>
         )}
