@@ -30,20 +30,12 @@ import Disclaimer from "./pages/Disclaimer";
 import FAQ from "./components/FAQ";
 import Accreditation from "./components/Accreditation";
 import Partners from "./components/Partners";
-
-// 👇 ScrollToTop
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
     <Router>
-      <ScrollToTop />
+  <ScrollToTop smooth={true} />
 
       <Routes>
         {/* ✅ Normal pages (with full Layout) */}

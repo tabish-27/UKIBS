@@ -49,19 +49,18 @@ const Gallery = () => {
   );
 
   return (
-    <div className="w-full min-h-screen  bg-[#FDDCEE] flex flex-col items-center">
-      <div className="text-center mb-12 mt-15 relative px-6 md:px-0">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F8069D] mb-6 tracking-wide relative inline-block">
-          CURATED MEDIA <br className="sm:hidden" />
-          GALLERY
-          <span className="absolute left-0 bottom-[-6px] h-1 w-full bg-gradient-to-r from-transparent via-[#F8069D] to-transparent rounded-full"></span>
-        </h2>
-
-        <p className="text-black/80 text-base md:text-lg max-w-3xl mx-auto">
-          Discover your captivating look! Browse our gallery of elegant styles
-          and timeless beauty.
-        </p>
-      </div>
+    <div className="w-full  bg-[#FDDCEE] flex flex-col items-center ">
+      <div className="text-center mb-12 mt-[15px] relative px-6 md:px-0">
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F8069D] mb-6 tracking-wide relative inline-block">
+    CURATED MEDIA <br className="sm:hidden" />
+    GALLERY
+    <span className="absolute left-0 bottom-[-6px] h-1 w-full bg-gradient-to-r from-transparent via-[#F8069D] to-transparent rounded-full"></span>
+  </h2>
+  <p className="text-black/80 text-base md:text-lg max-w-3xl mx-auto">
+    Discover your captivating look! Browse our gallery of elegant styles
+    and timeless beauty.
+  </p>
+</div>
 
       <main className="w-full max-w-[1200px] py-12 flex justify-center overflow-hidden">
         {/* This is the new container that will move */}

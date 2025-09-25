@@ -1,18 +1,34 @@
-// small helper to scroll to top smoothly on every route change
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-export default function ScrollToTop({ smooth = true }) {
-  const { pathname } = useLocation();
+const ScrollToTop = ({ smooth = true }) => {
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // try/catch because some browsers in devtools may block smooth
-    try {
-      window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
-    } catch {
-      window.scrollTo(0, 0);
+    const navbar = document.querySelector("header");
+    const navbarHeight = navbar ? navbar.offsetHeight : 80;
+
+    const scrollToElement = () => {
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+          window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+      }
+    };
+
+    if (hash) {
+      // Delay scroll to ensure page content is rendered
+      setTimeout(scrollToElement, 0);
+    } else {
+      scrollToElement();
     }
-  }, [pathname, smooth]);
+  }, [pathname, hash, smooth]);
 
   return null;
-}
+};
+
+export default ScrollToTop;
